@@ -2,8 +2,8 @@
 // config.php
 // إعدادات الاتصال بقاعدة البيانات
 // إعدادات قاعدة البيانات
-$host = 'localhost';
-$dbname = 'printing_management_system';
+$host = 'localhost:3360';
+$dbname = ' printing_management_system';
 $user = 'root';
 $pass = '';
               // كلمة المرور

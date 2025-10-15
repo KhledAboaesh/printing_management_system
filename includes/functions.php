@@ -5,6 +5,7 @@ require_once 'db.php';
 require_once 'includes/db.php';
 
 
+
 // دالة للحصول على عدد العملاء
 function getCustomerCount() {
     global $db;

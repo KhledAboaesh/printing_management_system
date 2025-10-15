@@ -2,7 +2,7 @@
 // ملف includes/db.php
 
 class Database {
-    private $host = 'localhost';
+    private $host = 'localhost:3360';
     private $db_name = 'printing_management_system';
     private $username = 'root'; // افتراضيًا أو غيرها حسب إعداداتك
     private $password = ''; // كلمة السر إن وجدت

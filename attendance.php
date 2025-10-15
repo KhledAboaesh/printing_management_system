@@ -484,6 +484,7 @@ try {
             }
         }
     </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
 </head>
 <body>
     <div class="container">
@@ -557,6 +558,8 @@ try {
         <div id="today-tab" class="tab-content active">
             <div class="content-grid">
                 <div class="checkin-section">
+                    <div id="qrcode" style="padding: 60px;"></div>
+
                     <h2 class="section-title">تسجيل حضور</h2>
                     <form method="POST" action="">
                         <div class="form-group">
@@ -575,7 +578,9 @@ try {
                             <i class="fas fa-sign-in-alt"></i> تسجيل حضور
                         </button>
                     </form>
+
                     
+
                     <h2 class="section-title" style="margin-top: 30px;">تسجيل انصراف</h2>
                     <form method="POST" action="">
                         <div class="form-group">
@@ -700,6 +705,20 @@ try {
     </div>
 
     <script>
+        // عرض رمز QR
+        let q =document.getElementById("qrcode");
+        let time_is = new Date();
+        let qrtext = `${time_is.getFullYear()}/${(time_is.getMonth() + 1).toString().padStart(2, "0")}/${time_is.getDate().toString().padStart(2, "0")}`
+        let qrCodeInstance;
+        qrCodeInstance = new QRCode(q, {
+            text: qrtext,
+            width: 128,
+            height: 128,
+            colorDark: "#3498db",
+            colorLight: "#ffffff",
+            correctLevel: QRCode.CorrectLevel.H
+        });
+
         function switchTab(tabName) {
             // Hide all tab contents
             document.querySelectorAll('.tab-content').forEach(tab => {
@@ -736,5 +755,9 @@ try {
             }
         };
     </script>
+
+
+
+</body>
 </body>
 </html>

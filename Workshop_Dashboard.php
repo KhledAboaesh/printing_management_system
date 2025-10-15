@@ -309,6 +309,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action'])) {
         .priority-medium { border-left: 4px solid #FF9F1C; }
         .priority-low { border-left: 4px solid #2EC4B6; }
     </style>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
 </head>
 <body>
     <div class="container">
@@ -487,6 +489,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action'])) {
         </div>
     </div>
 
+    <div id="qrcode" style=""></div>
+
+
     <script>
         // فتح modal لتحديث حالة المهمة
         function openModal(invoiceId, action) {
@@ -545,6 +550,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action'])) {
         
         // تعيين الحد الأدنى لتاريخ الإنجاز إلى اليوم
         document.getElementById('estimated_completion').min = new Date().toISOString().split('T')[0];
+
+
+
+    
     </script>
+
+
 </body>
 </html>
